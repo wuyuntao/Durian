@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Configuration", "Dur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Configuration.Exporter", "Durian.Configuration.Exporter\Durian.Configuration.Exporter.csproj", "{4B4FF9C9-7309-4BB0-9D15-4E95D90D9E43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Authentication.Common", "Durian.Authentication.Common\Durian.Authentication.Common.csproj", "{71418C9E-59F6-4F5A-A960-80E841CD8A87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Authentication.Client", "Durian.Authentication.Client\Durian.Authentication.Client.csproj", "{6FB2ECD3-BA1F-4351-BB5A-FF9D592828EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Authentication.Server", "Durian.Authentication.Server\Durian.Authentication.Server.csproj", "{CF8BE917-B2D6-4F22-87D0-E7FCDA53338A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{4B4FF9C9-7309-4BB0-9D15-4E95D90D9E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B4FF9C9-7309-4BB0-9D15-4E95D90D9E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B4FF9C9-7309-4BB0-9D15-4E95D90D9E43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71418C9E-59F6-4F5A-A960-80E841CD8A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71418C9E-59F6-4F5A-A960-80E841CD8A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71418C9E-59F6-4F5A-A960-80E841CD8A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71418C9E-59F6-4F5A-A960-80E841CD8A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB2ECD3-BA1F-4351-BB5A-FF9D592828EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB2ECD3-BA1F-4351-BB5A-FF9D592828EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB2ECD3-BA1F-4351-BB5A-FF9D592828EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB2ECD3-BA1F-4351-BB5A-FF9D592828EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8BE917-B2D6-4F22-87D0-E7FCDA53338A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8BE917-B2D6-4F22-87D0-E7FCDA53338A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8BE917-B2D6-4F22-87D0-E7FCDA53338A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8BE917-B2D6-4F22-87D0-E7FCDA53338A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
