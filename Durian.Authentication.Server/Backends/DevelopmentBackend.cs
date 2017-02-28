@@ -1,12 +1,13 @@
-﻿using System;
-
-namespace Durian.Authentication
+﻿namespace Durian.Authentication
 {
     class DevelopmentBackend : AuthorizationBackend
     {
-        protected override void OnAuthorize(Authorize msg)
+        public DevelopmentBackend()
         {
-            Sender.Tell(new AuthorizationSucceeded($"{msg.Backend}-{msg.Uid}"), Self);
+            Receive<Authorize>(msg =>
+            {
+                Sender.Tell(new AuthorizationSucceeded($"{msg.Backend}-{msg.Uid}"), Self);
+            });
         }
     }
 }

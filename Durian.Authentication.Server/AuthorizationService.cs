@@ -19,21 +19,21 @@ namespace Durian.Authentication
             settings.InjectTopLevelFallback(authenticationConfig);
 
             var deployer = new Deployer(settings);
-            var config = settings.Config;
-            var fallbackConfig = config.GetConfig("durian.authentication.backends.fallback");
+            var config = settings.Config.GetConfig("durian.authentication");
+            var routerConfig = config.GetConfig("default-router");
 
-            var backends = config.GetStringList("durian.authentication.backends.enabled");
+            var backends = config.GetStringList("backends.enabled");
 
             foreach (var backend in backends)
             {
-                var backendConfig = config.GetConfig($"durian.authentication.backends.{backend}");
+                var backendConfig = config.GetConfig($"backends.{backend}");
                 if (backendConfig == null)
-                    throw new ConfigurationException($"Unknown authentication backend '{backend}'");
-                backendConfig = backendConfig.WithFallback(fallbackConfig);
+                    throw new ConfigurationException($"Unknown authentication backend: '{backend}'");
+                backendConfig = backendConfig.WithFallback(routerConfig);
 
                 var backendTypeName = backendConfig.GetString("type");
                 if (string.IsNullOrEmpty(backendTypeName))
-                    throw new ConfigurationException($"Type not defined for backend '{backend}'");
+                    throw new ConfigurationException($"Type not defined for backend: '{backend}'");
 
                 var backendType = Type.GetType(backendTypeName);
                 if (backendType == null)
@@ -46,17 +46,22 @@ namespace Durian.Authentication
                 routers.Add(backend, router);
             }
 
+            var receiveTimeout = TimeSpan.FromMilliseconds(config.GetInt("receive-timeout-ms"));
+
             ReceiveAsync<Authorize>(async m =>
             {
                 IActorRef router;
                 if (routers.TryGetValue(m.Backend, out router))
                 {
-                    var r = await router.Ask(m);
+                    var r = await router.Ask(m, receiveTimeout);
 
-                    Sender.Tell(r, Self);
+                    if (r != null)
+                        Sender.Tell(r, Self);
+                    else
+                        Sender.Tell(new AuthorizationFailed($"Authentication timeout: '{m.Backend}'"));
                 }
                 else
-                    Sender.Tell(new AuthorizationFailed($"Unknown authentication backend '{m.Backend}'"));
+                    Sender.Tell(new AuthorizationFailed($"Unknown authentication backend: '{m.Backend}'"));
             });
         }
     }
