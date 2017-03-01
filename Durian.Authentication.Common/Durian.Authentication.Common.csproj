@@ -38,9 +38,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\Authorize.cs" />
-    <Compile Include="Events\AuthorizationFailed.cs" />
-    <Compile Include="Events\AuthorizationSucceeded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

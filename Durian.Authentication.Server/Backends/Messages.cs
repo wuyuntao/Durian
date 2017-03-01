@@ -18,4 +18,26 @@
             Extra = extra;
         }
     }
+
+    public class AuthorizationSucceeded
+    {
+        public string UserId { get; private set; }
+
+        public string SessionId { get; private set; }
+
+        public AuthorizationSucceeded(string userId)
+        {
+            UserId = userId;
+        }
+    }
+
+    public sealed class AuthorizationFailed
+    {
+        public string Reason { get; private set; }
+
+        public AuthorizationFailed(string reason)
+        {
+            Reason = reason;
+        }
+    }
 }

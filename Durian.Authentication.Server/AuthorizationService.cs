@@ -21,7 +21,6 @@ namespace Durian.Authentication
             var deployer = new Deployer(settings);
             var config = settings.Config.GetConfig("durian.authentication");
             var routerConfig = config.GetConfig("default-router");
-
             var backends = config.GetStringList("backends.enabled");
 
             foreach (var backend in backends)
