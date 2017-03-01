@@ -7,8 +7,8 @@
     <ProjectGuid>{CF8BE917-B2D6-4F22-87D0-E7FCDA53338A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Durian.Authentication.Server</RootNamespace>
-    <AssemblyName>Durian.Authentication.Server</AssemblyName>
+    <RootNamespace>Durian.Authentication</RootNamespace>
+    <AssemblyName>Durian.Authentication</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -113,12 +113,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Durian.Authentication.Common\Durian.Authentication.Common.csproj">
-      <Project>{71418c9e-59f6-4f5a-a960-80e841cd8a87}</Project>
-      <Name>Durian.Authentication.Common</Name>
+    <ProjectReference Include="..\Durian.Authentication.Client\Durian.Authentication.Client.csproj">
+      <Project>{6fb2ecd3-ba1f-4351-bb5a-ff9d592828ea}</Project>
+      <Name>Durian.Authentication.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Durian\Durian.csproj">
+      <Project>{4ea5ba80-9fef-4ff2-a026-46369d80313b}</Project>
+      <Name>Durian</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

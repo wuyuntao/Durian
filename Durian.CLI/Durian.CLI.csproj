@@ -62,16 +62,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Durian.Common\Durian.Common.csproj">
-      <Project>{e24f4d7c-2296-4719-a552-bd8449827d68}</Project>
-      <Name>Durian.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Durian.Server\Durian.Server.csproj">
-      <Project>{4ea5ba80-9fef-4ff2-a026-46369d80313b}</Project>
-      <Name>Durian.Server</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

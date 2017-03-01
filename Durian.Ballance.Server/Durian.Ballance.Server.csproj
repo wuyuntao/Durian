@@ -103,18 +103,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Durian.Ballance.Common\Durian.Ballance.Common.csproj">
-      <Project>{8edc2a3e-a606-43f0-90da-4a769fc489bb}</Project>
-      <Name>Durian.Ballance.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Durian.Common\Durian.Common.csproj">
-      <Project>{e24f4d7c-2296-4719-a552-bd8449827d68}</Project>
-      <Name>Durian.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Durian.Ballance.Client\Durian.Ballance.Client.csproj">
+      <Project>{5b9b5d95-c78b-4754-9a06-e14bd20188a3}</Project>
+      <Name>Durian.Ballance.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
