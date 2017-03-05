@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Durian.Ballance.Client")]
+[assembly: AssemblyTitle("Ballance.Server")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Durian.Ballance.Client")]
+[assembly: AssemblyProduct("Ballance.Server")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("5b9b5d95-c78b-4754-9a06-e14bd20188a3")]
+[assembly: Guid("f0c6ff7e-cbd4-4632-95a2-c4599766c0dd")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

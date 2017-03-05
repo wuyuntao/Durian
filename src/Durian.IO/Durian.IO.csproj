@@ -7,8 +7,8 @@
     <ProjectGuid>{606B0B7E-E5F3-48A1-B134-53F0FE6E68A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Durian.Network</RootNamespace>
-    <AssemblyName>Durian.Network</AssemblyName>
+    <RootNamespace>Durian.IO</RootNamespace>
+    <AssemblyName>Durian.IO</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

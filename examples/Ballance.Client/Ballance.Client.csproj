@@ -7,8 +7,8 @@
     <ProjectGuid>{5B9B5D95-C78B-4754-9A06-E14BD20188A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Durian.Ballance.Client</RootNamespace>
-    <AssemblyName>Durian.Ballance.Client</AssemblyName>
+    <RootNamespace>Ballance.Client</RootNamespace>
+    <AssemblyName>Ballance.Client</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,12 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Durian.Client\Durian.Client.csproj">
-      <Project>{ad8e250d-2b2a-4157-8269-087f6fc50d4a}</Project>
-      <Name>Durian.Client</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -121,10 +121,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Durian.Authentication.Client\Durian.Authentication.Client.csproj">
-      <Project>{6fb2ecd3-ba1f-4351-bb5a-ff9d592828ea}</Project>
-      <Name>Durian.Authentication.Client</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Durian\Durian.csproj">
       <Project>{4ea5ba80-9fef-4ff2-a026-46369d80313b}</Project>
       <Name>Durian</Name>
