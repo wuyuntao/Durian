@@ -3,53 +3,77 @@ using DotNetty.Codecs.Protobuf;
 using DotNetty.Transport.Bootstrapping;
 using DotNetty.Transport.Channels;
 using DotNetty.Transport.Channels.Sockets;
+using System;
 
 namespace Durian.Network
 {
-    public class TcpServer : Server
+    class TcpServer : Server
     {
         private readonly TcpServerConfig config;
+        private IActorRef monitor;
         private IChannel channel;
 
-        private TcpServer(TcpServerConfig config)
+        public TcpServer(TcpServerConfig config)
         {
             this.config = config;
+
+            ReceiveAsync<Bind>(async m =>
+            {
+                try
+                {
+                    var bootstrap = new ServerBootstrap();
+                    bootstrap
+                        // TODO configure to use seperate event loop groups
+                        .Group(new MultithreadEventLoopGroup())
+                        .Channel<TcpServerSocketChannel>()
+                        // TODO configure socket options
+                        .Option(ChannelOption.SoBacklog, 100)
+                        .Option(ChannelOption.SoRcvbuf, 1024 * 16)
+                        .Option(ChannelOption.SoSndbuf, 1024 * 16)
+                        // TODO configure logging
+                        //.Handler(new LoggingHandler("ping-pong-server"))
+                        .ChildHandler(new ChannelInitializer(Context.System, Self));
+
+                    // TODO Any threading risk here?
+                    channel = await bootstrap.BindAsync(m.LocalAddress);
+                    monitor = Sender;
+
+                    Sender.Tell(new Bound(m.LocalAddress));
+
+                    Become(Bound);
+                }
+                catch (Exception)
+                {
+                    // TODO Handler exceptions
+                    channel = null;
+                    monitor = null;
+                }
+            });
         }
 
-        public static Props Props(TcpServerConfig config)
+        private void Bound()
         {
-            return Akka.Actor.Props.Create(() => new TcpServer(config));
-        }
+            ReceiveAsync<Unbind>(async m =>
+            {
+                // TODO Handler exceptions
+                // TODO Any threading risk here?
+                try
+                {
+                    await channel.CloseAsync();
 
-        protected override void PreStart()
-        {
-            base.PreStart();
+                    Sender.Tell(new Unbound());
+                }
+                catch (Exception)
+                {
 
-            var bootstrap = new ServerBootstrap();
-            bootstrap
-                // TODO configure to use seperate event loop groups
-                .Group(new MultithreadEventLoopGroup())
-                .Channel<TcpServerSocketChannel>()
-                // TODO configure socket options
-                .Option(ChannelOption.SoBacklog, 100)
-                .Option(ChannelOption.SoRcvbuf, 1024 * 16)
-                .Option(ChannelOption.SoSndbuf, 1024 * 16)
-                // TODO configure logging
-                //.Handler(new LoggingHandler("ping-pong-server"))
-                .ChildHandler(new ChannelInitializer(Context.System, Self));
+                }
+                finally
+                {
+                    Context.Stop(Self);
+                }
+            });
 
-            // TODO Handler exceptions
-            var t = bootstrap.BindAsync(config.Address);
-            t.RunSynchronously();
-            channel = t.Result;
-        }
-
-        protected override void PostStop()
-        {
-            // TODO Handler exceptions
-            channel.CloseAsync().RunSynchronously();
-
-            base.PostStop();
+            Receive<Connected>(m => monitor.Tell(m, m.Connection));
         }
 
         class ChannelInitializer : ChannelInitializer<ISocketChannel>
@@ -94,17 +118,17 @@ namespace Durian.Network
                 // TODO Assign connection name
                 connection = system.ActorOf(TcpConnection.Props(context));
 
-                connection.Tell(new Connected(connection), server);
+                server.Tell(new Connected(connection));
             }
 
             public override void ChannelInactive(IChannelHandlerContext context)
             {
-                connection.Tell(new Disconnected(connection), server);
+                connection.Tell(new Disconnected());
             }
 
             public override void ChannelRead(IChannelHandlerContext context, object message)
             {
-                connection.Tell(new MessageReceived(message), server);
+                connection.Tell(new Received(message));
             }
         }
     }

@@ -1,9 +1,11 @@
-﻿using Akka.Actor;
+﻿using System;
+using System.Threading.Tasks;
+using Akka.Actor;
 using DotNetty.Transport.Channels;
 
 namespace Durian.Network
 {
-    public class TcpConnection : Connection
+    class TcpConnection : Connection
     {
         private readonly IChannelHandlerContext context;
 
@@ -15,6 +17,11 @@ namespace Durian.Network
         internal static Props Props(IChannelHandlerContext context)
         {
             return Akka.Actor.Props.Create(() => new TcpConnection(context));
+        }
+
+        internal override Task WriteAsync(object payload)
+        {
+            return context.WriteAndFlushAsync(payload);
         }
     }
 }
