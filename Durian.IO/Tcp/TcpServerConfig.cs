@@ -1,4 +1,4 @@
-﻿namespace Durian.Network
+﻿namespace Durian.IO
 {
     public sealed class TcpServerConfig
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Durian.Network
+namespace Durian.IO
 {
     abstract class Connection : ReceiveActor
     {

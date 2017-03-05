@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Ballance.Client", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Client", "Durian.Client\Durian.Client.csproj", "{AD8E250D-2B2A-4157-8269-087F6FC50D4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Serialization.FlatBuffers", "Durian.Serialization.FlatBuffers\Durian.Serialization.FlatBuffers.csproj", "{2187A46C-D48F-4B60-8E3E-D25162E16ECB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Serialization.FlatBuffers.Compiler", "Durian.Serialization.FlatBuffers.Compiler\Durian.Serialization.FlatBuffers.Compiler.csproj", "{6B02B97B-94B3-4949-AA50-CA7717E5C4B1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Configuration", "Durian.Configuration\Durian.Configuration.csproj", "{8B114920-15EE-441B-A6A2-892603BC82BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Configuration.Exporter", "Durian.Configuration.Exporter\Durian.Configuration.Exporter.csproj", "{4B4FF9C9-7309-4BB0-9D15-4E95D90D9E43}"
@@ -27,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Authentication", "Du
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian", "Durian\Durian.csproj", "{4EA5BA80-9FEF-4FF2-A026-46369D80313B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.Network", "Durian.Network\Durian.Network.csproj", "{606B0B7E-E5F3-48A1-B134-53F0FE6E68A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durian.IO", "Durian.IO\Durian.IO.csproj", "{606B0B7E-E5F3-48A1-B134-53F0FE6E68A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,14 +51,6 @@ Global
 		{AD8E250D-2B2A-4157-8269-087F6FC50D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD8E250D-2B2A-4157-8269-087F6FC50D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD8E250D-2B2A-4157-8269-087F6FC50D4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2187A46C-D48F-4B60-8E3E-D25162E16ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2187A46C-D48F-4B60-8E3E-D25162E16ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2187A46C-D48F-4B60-8E3E-D25162E16ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2187A46C-D48F-4B60-8E3E-D25162E16ECB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B02B97B-94B3-4949-AA50-CA7717E5C4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B02B97B-94B3-4949-AA50-CA7717E5C4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B02B97B-94B3-4949-AA50-CA7717E5C4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B02B97B-94B3-4949-AA50-CA7717E5C4B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B114920-15EE-441B-A6A2-892603BC82BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B114920-15EE-441B-A6A2-892603BC82BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B114920-15EE-441B-A6A2-892603BC82BE}.Release|Any CPU.ActiveCfg = Release|Any CPU

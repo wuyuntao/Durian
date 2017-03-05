@@ -1,7 +1,7 @@
 ﻿using Akka.Actor;
 using System.Net;
 
-namespace Durian.Network
+namespace Durian.IO
 {
     public class Bind
     {

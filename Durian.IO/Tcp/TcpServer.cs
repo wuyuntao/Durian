@@ -5,7 +5,7 @@ using DotNetty.Transport.Channels;
 using DotNetty.Transport.Channels.Sockets;
 using System;
 
-namespace Durian.Network
+namespace Durian.IO
 {
     class TcpServer : Server
     {

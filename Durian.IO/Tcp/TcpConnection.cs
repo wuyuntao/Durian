@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using Akka.Actor;
+﻿using Akka.Actor;
 using DotNetty.Transport.Channels;
+using System.Threading.Tasks;
 
-namespace Durian.Network
+namespace Durian.IO
 {
     class TcpConnection : Connection
     {

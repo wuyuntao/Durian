@@ -1,6 +1,6 @@
 ﻿using Akka.Actor;
 
-namespace Durian.Network
+namespace Durian.IO
 {
     public abstract class Server : ReceiveActor
     {

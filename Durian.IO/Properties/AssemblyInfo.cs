@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Durian.Serialization.FlatBuffers.Compiler")]
+[assembly: AssemblyTitle("Durian.IO")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Durian.Serialization.FlatBuffers.Compiler")]
+[assembly: AssemblyProduct("Durian.IO")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("6b02b97b-94b3-4949-aa50-ca7717e5c4b1")]
+[assembly: Guid("606b0b7e-e5f3-48a1-b134-53f0fe6e68a4")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
