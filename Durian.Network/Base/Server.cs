@@ -1,13 +1,11 @@
-﻿namespace Durian.Network
-{
-    public abstract class Server : Disposable
-    {
-        public event ConnectedHandler OnConnected;
+﻿using Akka.Actor;
 
+namespace Durian.Network
+{
+    public abstract class Server : ReceiveActor
+    {
         protected void Connected(Connection connection)
         {
-            if (OnConnected != null)
-                OnConnected(connection);
         }
     }
 }
