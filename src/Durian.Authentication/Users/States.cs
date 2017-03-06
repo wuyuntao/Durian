@@ -17,16 +17,9 @@ namespace Durian.Authentication
             SessionExpirationTime = sessionExpirationTime;
         }
 
-        public UserState Apply(object e)
+        public UserState Apply(SessionCreated e)
         {
-            if (e is SessionCreated)
-            {
-                var sc = (SessionCreated)e;
-
-                return new UserState(UserId, sc.SessionId, sc.SessionExpirationTime);
-            }
-            else
-                return this;
+            return new UserState(UserId, e.SessionId, e.SessionExpirationTime);
         }
     }
 }
