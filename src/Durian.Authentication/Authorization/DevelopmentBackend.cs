@@ -6,7 +6,7 @@
         {
             Receive<Authorize>(msg =>
             {
-                Sender.Tell(new AuthorizationSucceeded($"{msg.Backend}-{msg.Uid}"), Self);
+                Sender.Tell(new AuthorizationSucceeded($"{msg.Backend}-{msg.Uid}", null), Self);
             });
         }
     }

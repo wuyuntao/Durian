@@ -25,9 +25,10 @@
 
         public string SessionId { get; private set; }
 
-        public AuthorizationSucceeded(string userId)
+        public AuthorizationSucceeded(string userId, string sessionId)
         {
             UserId = userId;
+            SessionId = sessionId;
         }
     }
 

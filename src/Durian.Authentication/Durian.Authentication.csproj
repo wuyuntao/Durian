@@ -107,16 +107,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backends\Messages.cs" />
-    <Compile Include="Users\Messages.cs" />
-    <Compile Include="Users\States.cs" />
-    <Compile Include="AuthorizationService.cs" />
-    <Compile Include="Backends\DevelopmentBackend.cs" />
-    <Compile Include="Backends\AuthorizationBackend.cs" />
+    <Compile Include="Authorization\Messages.cs" />
+    <Compile Include="Session\Session.cs" />
+    <Compile Include="Session\SessionService.cs" />
+    <Compile Include="User\Messages.cs" />
+    <Compile Include="Authorization\AuthorizationService.cs" />
+    <Compile Include="Authorization\DevelopmentBackend.cs" />
+    <Compile Include="Authorization\AuthorizationBackend.cs" />
     <Compile Include="Configuration\AuthenticationConfigFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Users\User.cs" />
-    <Compile Include="Users\UserRepository.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Configuration\Authentication.conf" />
@@ -124,11 +125,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Durian.IO\Durian.IO.csproj">
+      <Project>{606b0b7e-e5f3-48a1-b134-53f0fe6e68a4}</Project>
+      <Name>Durian.IO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Durian\Durian.csproj">
       <Project>{4ea5ba80-9fef-4ff2-a026-46369d80313b}</Project>
       <Name>Durian</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

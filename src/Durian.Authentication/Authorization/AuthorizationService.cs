@@ -49,8 +49,7 @@ namespace Durian.Authentication
 
             ReceiveAsync<Authorize>(async m =>
             {
-                IActorRef router;
-                if (routers.TryGetValue(m.Backend, out router))
+                if (routers.TryGetValue(m.Backend, out IActorRef router))
                 {
                     var r = await router.Ask(m, receiveTimeout);
 
